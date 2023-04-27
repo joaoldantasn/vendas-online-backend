@@ -1,9 +1,14 @@
-import { Controller, Get } from '@nestjs/common';
+import { Body, Controller, Post } from '@nestjs/common';
+import { createUserDto } from './dtos/createUser.dto';
 
 @Controller('user')
 export class UserController {
-  @Get()
-  async getAllUsers() {
-    return JSON.stringify({ test: 'abs' });
+  @Post()
+  async createUser(@Body() createUser: createUserDto) {
+    return {
+      ...createUser,
+      //por motivos de segurança
+      password: undefined,
+    };
   }
 }
