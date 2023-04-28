@@ -2,11 +2,14 @@ import { Module } from '@nestjs/common';
 import { UserModule } from './user/user.module';
 import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { UserEntity } from './user/interfaces/user.entity';
+import { UserEntity } from './user/entities/user.entity';
 import { CreateTableAddress1682689822190 } from './migration/1682689822190-create_table_address';
 import { CreateTableState1682689796971 } from './migration/1682689796971-create_table_state';
 import { CreateTableUser1682688473580 } from './migration/1682688473580-create_table_user';
 import { CreateTableCity1682689807706 } from './migration/1682689807706-create_table_city';
+import { StateModule } from './state/state.module';
+import { CityModule } from './city/city.module';
+import { AddressModule } from './address/address.module';
 
 @Module({
   imports: [
@@ -32,6 +35,9 @@ import { CreateTableCity1682689807706 } from './migration/1682689807706-create_t
       migrationsRun: true,
     }),
     UserModule,
+    StateModule,
+    CityModule,
+    AddressModule,
   ],
   controllers: [],
   providers: [],
