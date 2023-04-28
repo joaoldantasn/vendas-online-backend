@@ -10,6 +10,7 @@ import { CreateTableCity1682689807706 } from './migration/1682689807706-create_t
 import { StateModule } from './state/state.module';
 import { CityModule } from './city/city.module';
 import { AddressModule } from './address/address.module';
+import { CacheModule } from './cache/cache.module';
 
 @Module({
   imports: [
@@ -38,6 +39,7 @@ import { AddressModule } from './address/address.module';
     StateModule,
     CityModule,
     AddressModule,
+    CacheModule,
   ],
   controllers: [],
   providers: [],
