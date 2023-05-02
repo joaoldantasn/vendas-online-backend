@@ -1,8 +1,8 @@
-import { ReturnStateDto } from 'src/state/dtos/returnState.dto';
+import { ReturnStateDto } from '../../state/dtos/returnState.dto';
 import { CityEntity } from '../entities/city.entity';
 export class returnCityDto {
   name: string;
-  state: ReturnStateDto;
+  state?: ReturnStateDto;
 
   constructor(city: CityEntity) {
     this.name = city.name;
